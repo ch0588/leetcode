@@ -9,42 +9,40 @@
 #include<iostream>
 #include<string>
 using namespace std;
-    void update(string &s,int pos, int val){
-        int r = val;
-        //cout<<s<<"\t"<<pos<<"\t"<<val<<endl;
-        while(r>0){
-            //cout<<"r="<<r<<endl;
-            if(pos>=(int)s.size()) s+="0";
-            r += (s[pos]-'0');
-            s[pos] = r%10 + '0';
-            r = (r - r%10)/10;
-            pos++;
-        }
-    }
-    string multiply(string num1, string num2) {
-        reverse(num1.begin(),num1.end());
-        reverse(num2.begin(),num2.end());
-        int l1 = (int)num1.size();
-        int l2 = (int)num2.size();
-        string ret = "";
-        for(int i=0; i<=l1+l2; ++i) ret+="0";
+void rotate(vector<vector<int> >& matrix) {
+        int n = (int)matrix.size();
+        for(int i=0; i<n/2; ++i){
+            for(int j=i; j<n-i-1; ++j){
+                int t = matrix[i][j];
+                int x=i,y=j;
+                for(int k=0; k<3; ++k){
+                    int nx = n-y-1,ny = x;
+                    matrix[x][y] = matrix[nx][ny];
+                    printf("%d %d   %d %d\n",x,y,nx,ny);
+                    x = nx; y = ny;
+                     for(int ii=0; ii<n; ++ii,printf("\n"))
+                    for(int jj=0; jj<n; ++jj)
+                        printf("%d",matrix[ii][jj]);
+                    printf("\n\n");
+                }
 
-        for(int i=0; i<l1; ++i)
-            for(int j=0; j<l2; ++j){
-                //printf("%d %d\n",i,j);
-                update(ret,i+j,(num1[i]-'0')*(num2[j]-'0'));
+                matrix[x][y] = t;
             }
-        string ans = "";
-        int i = (int)ret.size()-1;
-        while(ret[i]=='0') i--;
-        for(int j=i; j>=0; --j) ans+=ret[j];
-        if((int)ans.size()==0) ans = "0";
-        return ans;
+        }
     }
 int main() {
     //freopen("1.out","w",stdout);
     //    ["","","","","","","","",""]
-    cout<<multiply("1234","9");
+    vector<vector<int> >a;
+    vector<int>t;
+    t.push_back(1);
+    t.push_back(2);
+    a.push_back(t);
+    t.clear();
+    t.push_back(3);
+    t.push_back(4);
+    a.push_back(t);
+    rotate(a);
     return 0;
 }
 
