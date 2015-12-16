@@ -2,8 +2,7 @@ class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
         int l = 0, n = nums.size();
-        for(auto x:nums)
-            if(x) nums[l++] = x;
-        for(int i=l; i<n; ++i) nums[i] = 0;
+        for(int i=0; i<n; ++i)
+            if(nums[i]) swap(nums[l++],nums[i]);
     }
 };
