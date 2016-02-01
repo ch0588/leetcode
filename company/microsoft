@@ -1,0 +1,52 @@
+5	Longest Palindromic Substring	22.2%	Medium
+8	String to Integer (atoi)	13.2%	Easy
+21	Merge Two Sorted Lists	34.3%	Easy
+23	Merge k Sorted Lists	22.5%	Hard
+24	Swap Nodes in Pairs	34.2%	Medium
+25	Reverse Nodes in k-Group	26.7%	Hard
+28	Implement strStr()	24.0%	Easy
+46	Permutations	34.3%	Medium
+47	Permutations II	27.1%	Medium
+48	Rotate Image	33.7%	Medium
+54	Spiral Matrix	21.9%	Medium
+55	Jump Game	27.7%	Medium
+56	Merge Intervals	24.3%	Hard
+71	Simplify Path	21.2%	Medium
+73	Set Matrix Zeroes	32.7%	Medium
+79	Word Search	22.1%	Medium
+91	Decode Ways	17.0%	Medium
+94	Binary Tree Inorder Traversal	38.4%	Medium
+98	Validate Binary Search Tree	20.6%	Medium
+101	Symmetric Tree	33.1%	Easy
+102	Binary Tree Level Order Traversal	31.4%	Easy
+103	Binary Tree Zigzag Level Order Traversal	27.8%	Medium
+106	Construct Binary Tree from Inorder and Postorder Traversal	28.2%	Medium
+112	Path Sum	30.7%	Easy
+114	Flatten Binary Tree to Linked List	30.2%	Medium
+117	Populating Next Right Pointers in Each Node II	32.5%	Hard
+121	Best Time to Buy and Sell Stock	35.0%	Medium
+124	Binary Tree Maximum Path Sum	22.7%	Hard
+125	Valid Palindrome	23.1%	Easy
+138	Copy List with Random Pointer	25.9%	Hard
+146	LRU Cache	15.7%	Hard
+153	Find Minimum in Rotated Sorted Array	35.2%	Medium
+160	Intersection of Two Linked Lists	29.9%	Easy
+162	Find Peak Element	32.7%	Medium
+165	Compare Version Numbers	16.7%	Easy
+168	Excel Sheet Column Title	20.5%	Easy
+173	Binary Search Tree Iterator	32.8%	Medium
+186	Reverse Words in a String II 	30.1%	Medium
+189	Rotate Array	20.2%	Easy
+200	Number of Islands	26.2%	Medium
+208	Implement Trie (Prefix Tree)	25.1%	Medium
+212	Word Search II	17.9%	Hard
+213	House Robber II	29.4%	Medium
+215	Kth Largest Element in an Array	31.3%	Medium
+218	The Skyline Problem	20.8%	Hard
+232	Implement Queue using Stacks	34.0%	Easy
+236	Lowest Common Ancestor of a Binary Tree	28.3%	Medium
+258	Add Digits	47.9%	Easy
+270	Closest Binary Search Tree Value 	32.6%	Easy
+285	Inorder Successor in BST 	34.8%	Medium
+297	Serialize and Deserialize Binary Tree	25.9%	Medium
+300	Longest Increasing Subsequence	33.0%	Medium

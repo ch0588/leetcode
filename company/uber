@@ -1,0 +1,24 @@
+4	Median of Two Sorted Arrays	18.0%	Hard
+8	String to Integer (atoi)	13.2%	Easy
+13	Roman to Integer	37.6%	Easy
+17	Letter Combinations of a Phone Number	27.5%	Medium
+23	Merge k Sorted Lists	22.5%	Hard
+33	Search in Rotated Sorted Array	29.7%	Hard
+36	Valid Sudoku	29.4%	Easy
+49	Group Anagrams	26.2%	Medium
+78	Subsets	30.2%	Medium
+102	Binary Tree Level Order Traversal	31.4%	Easy
+104	Maximum Depth of Binary Tree	46.9%	Easy
+121	Best Time to Buy and Sell Stock	35.0%	Medium
+125	Valid Palindrome	23.1%	Easy
+138	Copy List with Random Pointer	25.9%	Hard
+140	Word Break II	19.0%	Hard
+146	LRU Cache	15.7%	Hard
+155	Min Stack	21.3%	Easy
+161	One Edit Distance 	27.3%	Medium
+171	Excel Sheet Column Number	40.0%	Easy
+202	Happy Number	35.3%	Easy
+206	Reverse Linked List	37.5%	Easy
+208	Implement Trie (Prefix Tree)	25.1%	Medium
+249	Group Shifted Strings 	30.4%	Easy
+266	Palindrome Permutation 	49.6%	Easy
