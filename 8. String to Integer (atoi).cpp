@@ -1,7 +1,7 @@
 class Solution {
 public:
-    int atoi(const char *str) {
-        int len = (int)strlen(str);
+    int myAtoi(string str) {
+        int len = str.length();
         if(len<1) return 0;
 
         string s="";

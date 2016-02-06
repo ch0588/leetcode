@@ -47,40 +47,55 @@ public:
     }
 };
 
-//dp,O(N^2)，f[i][j]表示[i,j]的字符串是否是回文。当(s[i]==s[j]&&f[i+1][j-1]),f[i][j]才为真，初始化是f[2][1]之类的i>j的情况也是true，因为会有长度为奇数的回文
+// Time Complexity: O(n)
+// Space Complexity: O(n)
 
 class Solution {
-public:
-    int f[1005][1005];
-    char s[1010];
-    int maxLen,maxPos;
-    int dfs(int i,int j) {
-        if(f[i][j]!=-1) return f[i][j];
+    public:
+        // Manacher's Algorithm
+        string longestPalindrome(string s) {
+            string T = preProcess(s);
+            int n = T.length();
+            vector<int> P(n);
+            int C = 0, R = 0;
+            for (int i = 1; i < n-1; i++) {
+                int i_mirror = 2*C-i; // equals to i' = C - (i-C)
 
-        if(i>=j)    return f[i][j] = 1;
+                P[i] = (R > i) ? min(R-i, P[i_mirror]) : 0;
 
-        if(s[i]==s[j]&&dfs(i+1,j-1)) {
-            if(maxLen<j-i+1){
-                maxLen = j-i+1;
-                maxPos = i;
+                // Attempt to expand palindrome centered at i
+                while (T[i + 1 + P[i]] == T[i - 1 - P[i]])
+                    P[i]++;
+
+                // If palindrome centered at i expand past R,
+                // adjust center based on expanded palindrome.
+                if (i + P[i] > R) {
+                    C = i;
+                    R = i + P[i];
+                }
             }
-            return f[i][j] = 1;
+
+            // Find the maximum element in P.
+            int maxLen = 0;
+            int centerIndex = 0;
+            for (int i = 1; i < n-1; i++) {
+                if (P[i] > maxLen) {
+                    maxLen = P[i];
+                    centerIndex = i;
+                }
+            }
+
+            return s.substr((centerIndex - 1 - maxLen)/2, maxLen);
         }
-        return f[i][j] = 0;
-    }
+    private:
+        string preProcess(string s) {
+            int n = s.length();
+            if (n == 0) return "^$";
+            string ret = "^";
+            for (int i = 0; i < n; i++)
+                ret += "#" + s.substr(i, 1);
 
-    string longestPalindrome(string str) {
-        int n = (int)str.size();
-        if(n==0) return "";
-
-        for(int i=0; i<n; ++i) s[i]=str[i];
-        s[n]='\0';
-        maxLen = 1, maxPos = 0;
-        memset(f,-1,sizeof(f));
-        for(int i=0; i<n; ++i)
-            for(int j=i; j<n; ++j){
-                f[i][j] = dfs(i,j);
-            }
-        return str.substr(maxPos,maxLen);
-    }
+            ret += "#$";
+            return ret;
+        }
 };
