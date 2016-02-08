@@ -1,3 +1,7 @@
+/*
+I V X   L   C    D    M
+1 5 10  50  100  500  1000
+*/
 class Solution {
 public:
     string intToRoman(int num) {
@@ -5,10 +9,10 @@ public:
         const string symbol[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         string ans="";
         int i = 0;
-        while(i<13&&num>0){
+        while (i < 13 && num > 0) {
             int cnt = num/radix[i];
             num %= radix[i];
-            while(cnt--) ans+=symbol[i];
+            while (cnt--) ans += symbol[i];
             i++;
         }
         return ans;

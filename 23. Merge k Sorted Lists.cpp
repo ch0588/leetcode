@@ -1,3 +1,6 @@
+// Time Complexity: O(n * logk)
+// Space Complexity: O(k)
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -19,27 +22,27 @@ class Solution {
 
 public:
     ListNode *mergeKLists(vector<ListNode *> &lists) {
-        priority_queue<NODE>Q;
-        while(!Q.empty()) Q.pop();
-        int n = (int)lists.size();
+        priority_queue<NODE> Q;
+        while (!Q.empty()) Q.pop();
+        int n = lists.size();
 
-        for(int i=0; i<n; ++i){
-            if(lists[i]==NULL) continue;
+        for (int i = 0; i < n; ++i) {
+            if ( !lists[i] ) continue;
             Q.push( NODE(lists[i]) );
         }
-        ListNode *head = NULL,*pre=NULL;
-        while(!Q.empty()){
+        
+        ListNode *head = NULL, *pre = NULL;
+        while ( !Q.empty() ) {
             NODE now = Q.top();
             Q.pop();
-            if(head==NULL){
+            if ( !head ) {
                 head = now.node;
                 pre = head;
-            }
-            else{
+            } else {
                 pre->next = now.node;
                 pre = now.node;
             }
-            if( now.node->next !=NULL ) Q.push(NODE(now.node->next));
+            if (now.node->next) Q.push( NODE(now.node->next) );
         }
         return head;
     }
