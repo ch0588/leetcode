@@ -10,7 +10,7 @@ class Solution {
             while (start <= end) {
                 const int mid = (start + end) / 2;
                 if (nums[mid] == target)
-                    return true;
+                    return mid;
                 if (nums[start] <  nums[mid]) {
                     if (nums[start] <= target && target < nums[mid])
                         end = mid - 1;
@@ -26,6 +26,6 @@ class Solution {
                 else
                     ++start;
             }
-            return false;
+            return -1;
         }
 };
