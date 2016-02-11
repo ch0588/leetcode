@@ -1,8 +1,11 @@
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
 /*
-only two pointer space
-leftest pointer is the most left side
-deal it by row
-*/
+ only two pointer space
+ leftest pointer is the most left side
+ deal it by row
+ */
 
 /**
  * Definition for binary tree with next pointer.
@@ -15,16 +18,30 @@ deal it by row
 class Solution {
 public:
     void connect(TreeLinkNode *root) {
-        if(root==NULL) return;
-        TreeLinkNode *leftest = root, *cur = NULL;
-        while(leftest->left){
-            cur = leftest;
-            while(cur){
-                cur->left->next = cur->right;
-                if(cur->next)   cur->right->next = cur->next->left;
-                cur = cur->next;
+        TreeLinkNode *now, *tail, *head;
+        // base BFS use next info
+        // now is current level travller,head is next level most left element,tail
+        // is next level most right until now
+        now = root;
+        head = tail = NULL;
+        while (now) {
+            if (now->left) {
+                if (tail)
+                    tail = tail->next = now->left;
+                else
+                    head = tail = now->left;
             }
-            leftest = leftest->left;
+            if (now->right) {
+                if (tail)
+                    tail = tail->next = now->right;
+                else
+                    head = tail = now->right;
+            }
+            
+            if (!(now = now->next)) {
+                now = head;
+                head = tail = NULL;
+            }
         }
     }
 };
