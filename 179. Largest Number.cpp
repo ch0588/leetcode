@@ -1,42 +1,32 @@
-/*
-贪心 sort
-考虑两两之间的大小关系，无非ab或ba两种形式
-特殊考虑"00"
+// Time Complexity: O(logn)
+// Space Complexity: O(n)
 
-121 12
-128 12
-*/
+/*
+ 121 12 | 12111 12121
+ 128 12 | 12812 12128
+ */
 class Solution {
 public:
-    static bool cmp(string a,string b){
-        string c = a+b;
-        string d = b+a;
-        return c<d;
-    }
-    string i2s(int x){
-        if(x==0) return "0";
-        string ans = "";
-        while(x){
-            ans += (x%10+'0');
-            x/=10;
-        }
-        reverse(ans.begin(),ans.end());
-        return ans;
+    static bool cmp(string a, string b) {
+        string c = a + b;
+        string d = b + a;
+        return c < d;
     }
     string largestNumber(vector<int> &num) {
-        vector<string>str;
-        for(int i=0; i<num.size(); ++i){
-            str.push_back( i2s(num[i]) );
+        vector<string> str;
+        for (int i = 0; i < num.size(); ++i) {
+            str.push_back(to_string(num[i]));
         }
         sort(str.begin(), str.end(), cmp);
-        string ans = "";
-        for(int i=(int)str.size()-1; i>=0; --i)
-            ans+=str[i];
-
+        string res = "";
+        for (int i = (int)str.size() - 1; i >= 0; --i) res += str[i];
+        
         bool not0 = false;
-        for(int i=0; i<ans.size(); ++i)
-            if(ans[i]!='0') not0 = true;
-        if(not0==false) return "0";
-        else return ans;
+        for (int i = 0; i < res.size(); ++i)
+            if (res[i] != '0') not0 = true;
+        if (not0 == false)
+            return "0";
+        else
+            return res;
     }
 };
