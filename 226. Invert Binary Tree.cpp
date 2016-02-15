@@ -1,3 +1,6 @@
+// Time Complexity: O(n)
+// Space Complexity: O(h)
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -10,8 +13,8 @@
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
-        if(root==NULL) return root;
-        TreeNode*left = root->left, *right = root->right;
+        if (!root) return root;
+        TreeNode *left = root->left, *right = root->right;
         root->left = invertTree(right);
         root->right = invertTree(left);
         return root;

@@ -1,3 +1,6 @@
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -9,8 +12,8 @@
 class Solution {
 public:
     void deleteNode(ListNode* node) {
-        if(node==NULL || node->next==NULL) return;
+        if (node == NULL || node->next == NULL) return;
         node->val = node->next->val;
-        node->next= node->next->next;
+        node->next = node->next->next;
     }
 };

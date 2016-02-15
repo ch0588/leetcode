@@ -1,3 +1,6 @@
+// Time Complexity: O(h)
+// Space Complexity: O(1)
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -10,13 +13,15 @@
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if(root==NULL || p==NULL || q==NULL) return root;
+        if (root == NULL || p == NULL || q == NULL) return root;
         TreeNode* cur = root;
-        if(p->val > q->val) swap(p,q);
-        while(cur){
-            if(cur->val >= p->val && cur->val <= q->val ) break;
-            if( cur->val > q->val ) cur = cur->left;
-            else cur = cur->right;
+        if (p->val > q->val) swap(p, q);
+        while (cur) {
+            if (cur->val >= p->val && cur->val <= q->val) break;
+            if (cur->val >= q->val)
+                cur = cur->left;
+            else
+                cur = cur->right;
         }
         return cur;
     }

@@ -1,6 +1,9 @@
+// Time Complexity: O(nlogn)
+// Space Complexity: O(n)
+
 /*
-http://www.cnblogs.com/easonliu/p/4531020.html
-*/
+ http://www.cnblogs.com/easonliu/p/4531020.html
+ */
 class Solution {
 public:
     vector<pair<int, int>> getSkyline(vector<vector<int>>& buildings) {
@@ -37,4 +40,5 @@ public:
         }
         return res;
     }
+    
 };

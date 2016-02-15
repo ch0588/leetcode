@@ -1,3 +1,6 @@
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
 class Solution {
 public:
     int calculate(string s) {
@@ -8,10 +11,10 @@ public:
         int sign = 1;
         int num = 0;
         int ans = 0;
-
+        
         // always transform s into ( s )
         signs.push(1);
-
+        
         for (auto c : s) {
             if (c >= '0' && c <= '9') {
                 num = 10 * num + c - '0';
@@ -29,11 +32,11 @@ public:
                 sign = 1;
             }
         }
-
+        
         if (num) {
             ans = ans + signs.top() * sign * num;
         }
-
+        
         return ans;
     }
 };
