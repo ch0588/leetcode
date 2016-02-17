@@ -1,31 +1,18 @@
-/*
-Given a singly linked list, group all odd nodes together followed by the even nodes. Please note here we are talking about the node number and not the value in the nodes.
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 
-You should try to do it in place. The program should run in O(1) space complexity and O(nodes) time complexity.
-
-Example:
-Given 1->2->3->4->5->NULL,
-return 1->3->5->2->4->NULL.
-
-Note:
-The relative order inside both the even and odd groups should remain as it was in the input. 
-The first node is considered odd, the second node even and so on ...
-
-Credits:
-Special thanks to @aadarshjajodia for adding this problem and creating all test cases.
- */
 class Solution {
 public:
     ListNode* oddEvenList(ListNode* head) {
-        if(!head || !head->next) return head;
+        if (!head || !head->next) return head;
         ListNode *odd = head, *even = head->next, *evenHead = head->next;
-        ListNode *cur = even->next;
-        while(cur){
+        ListNode* cur = even->next;
+        while (cur) {
             odd->next = cur;
             odd = odd->next;
             cur = cur->next;
             odd->next = NULL;
-            if(cur){
+            if (cur) {
                 even->next = cur;
                 even = even->next;
                 cur = cur->next;

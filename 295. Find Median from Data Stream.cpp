@@ -45,7 +45,7 @@ public:
         if(cnt++<5)
             printf("num=%d min=%d max=%d\n",num,min_heap.size(),max_heap.size());
     }
-
+    
     // Returns the median of current data stream
     double findMedian() {
         int n = min_heap.size() + max_heap.size();
@@ -66,6 +66,12 @@ public:
 // mf.addNum(1);
 // mf.findMedian();
 
+// Time Complexity: O(logn) per option
+// Space Complexity: O(n)
+
+/*
+ min_heap.size() always >= max_heap.size()
+ */
 class MedianFinder {
 public:
     //always maintain min_heap top >= max_heap top
@@ -85,12 +91,12 @@ public:
             max_heap.pop();
         }
     }
-
+    
     // Returns the median of current data stream
     double findMedian() {
         return min_heap.size() > max_heap.size()
-               ? min_heap.top()
-               : (min_heap.top() + max_heap.top()) / 2.0;
+        ? min_heap.top()
+        : (min_heap.top() + max_heap.top()) / 2.0;
     }
 };
 
@@ -98,3 +104,5 @@ public:
 // MedianFinder mf;
 // mf.addNum(1);
 // mf.findMedian();
+
+

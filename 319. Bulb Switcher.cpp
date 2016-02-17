@@ -1,8 +1,10 @@
+// Time:  O(1)
+// Space: O(1)
+
 class Solution {
 public:
     int bulbSwitch(int n) {
-        int res = 0;
-        for(int i=1; i*i<=n; ++i) res = i;
-        return res;
+        // The number of full squares.
+        return static_cast<int>(sqrt(n));
     }
 };
