@@ -10,25 +10,29 @@ Note: There will be exactly one celebrity if he/she is in the party. Return the 
 Show Company Tags
 Show Tags
 */
-   
+
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
 // Forward declaration of the knows API.
 bool knows(int a, int b);
 
 class Solution {
 public:
     int findCelebrity(int n) {
-        if(n<1) return -1;
+        if (n < 1) return -1;
         
-        int l=0, r=n-1;
-        while(l<r){
-            if( knows(l,r) )
+        int l = 0, r = n - 1;
+        while (l < r) {
+            if (knows(l, r))
                 l++;
             else
                 r--;
         }
-        for(int i=0; i<n; ++i){
-            if(i==l) continue;
-            if(knows(l,i) || !knows(i,l)) return -1;
+        for (int i = 0; i < n; ++i) {
+            if (i == l) continue;
+            if (knows(l, i) || !knows(i, l)) return -1;
         }
         return l;
     }

@@ -33,37 +33,46 @@ Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
 class Solution {
 public:
     int res;
-    void dfs(TreeNode *root,int last,int curlen){
-        res = max(res,curlen);
-        if(!root) return;
-        //printf("%d %d %d\n",root->val,last,curlen);
-        if(root->val  == last+1){
+    void dfs(TreeNode *root, int last, int curlen) {
+        res = max(res, curlen);
+        if (!root) return;
+        if (root->val == last + 1) {
             curlen++;
-        }
-        else{
+        } else {
             curlen = 1;
         }
-        dfs(root->left,root->val,curlen);
-        dfs(root->right,root->val,curlen);
+        dfs(root->left, root->val, curlen);
+        dfs(root->right, root->val, curlen);
     }
-    int longestConsecutive(TreeNode* root) {
-        if(root==NULL) return 0;
+    int longestConsecutive(TreeNode *root) {
+        if (root == NULL) return 0;
         res = 0;
-        dfs(root,root->val,1);
+        dfs(root, root->val, 1);
         return res;
     }
 };
 
 
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
 class Solution {
 public:
-    int longestConsecutive(TreeNode* root) {
-        return search(root, nullptr, 0);
-    }
-
+    int longestConsecutive(TreeNode *root) { return search(root, nullptr, 0); }
+    
     int search(TreeNode *root, TreeNode *parent, int len) {
         if (!root) return len;
-        len = (parent && root->val == parent->val + 1)?len+1:1;
-        return max(len, max(search(root->left, root, len), search(root->right, root, len)));
+        len = (parent && root->val == parent->val + 1) ? len + 1 : 1;
+        return max(len, max(search(root->left, root, len),
+                            search(root->right, root, len)));
     }
 };

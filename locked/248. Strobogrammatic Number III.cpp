@@ -1,17 +1,16 @@
+/*
 A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).
-
 Write a function to count the total strobogrammatic numbers that exist in the range of low <= num <= high.
-
 For example,
 Given low = "50", high = "100", return 3. Because 69, 88, and 96 are three strobogrammatic numbers.
 
 Note:
 Because the range might be a large number, the low and high numbers are represented as string.
-
+*/
 
 /*
-https://leetcode.com/discuss/50624/clean-and-easy-understanding-java-solution
-*/
+ https://leetcode.com/discuss/50624/clean-and-easy-understanding-java-solution
+ */
 class Solution {
 public:
     Solution() {
@@ -26,11 +25,14 @@ public:
         }
         return ans;
     }
+    
 private:
     unordered_map<char, char> mp;
-    void strobogrammaticCount(string temp, int& ans, string& low, string& high, int lo, int hi) {
+    void strobogrammaticCount(string temp, int& ans, string& low, string& high,
+                              int lo, int hi) {
         if (lo > hi) {
-            if ((temp[0] != '0' || temp.length() == 1) && less(low, temp) && less(temp, high))
+            if ((temp[0] != '0' || temp.length() == 1) && less(low, temp) &&
+                less(temp, high))
                 ans++;
             return;
         }
@@ -45,8 +47,10 @@ private:
         int m = s.length(), n = t.length(), i;
         if (m != n) return m < n;
         for (i = 0; i < m; i++)
-            if (s[i] == t[i]) continue;
-            else break;
+            if (s[i] == t[i])
+                continue;
+            else
+                break;
         return i == m || s[i] < t[i];
     }
 };

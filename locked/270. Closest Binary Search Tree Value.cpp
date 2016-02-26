@@ -1,9 +1,11 @@
 /*
-Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target.
-
-Note:
-Given target value is a floating point.
-You are guaranteed to have only one unique value in the BST that is closest to the target.
+ Given a non-empty binary search tree and a target value, find the value in the
+ BST that is closest to the target.
+ 
+ Note:
+ Given target value is a floating point.
+ You are guaranteed to have only one unique value in the BST that is closest to
+ the target.
  */
 
 /**
@@ -18,21 +20,22 @@ You are guaranteed to have only one unique value in the BST that is closest to t
 class Solution {
 public:
     int closestValue(TreeNode* root, double target) {
-        if(root==NULL) return INT_MAX;
+        if (root == NULL) return INT_MAX;
         
-        int child=INT_MAX;
-        if((double)root->val > target){
-            child = closestValue(root->left,target);
-        }
-        else{
-            child = closestValue(root->right,target);
+        int child = INT_MAX;
+        if ((double)root->val > target) {
+            child = closestValue(root->left, target);
+        } else {
+            child = closestValue(root->right, target);
         }
         
-        if(child==INT_MAX) return root->val;
-        return fabs(target-child)<fabs(target-root->val) ? child : root->val;
+        if (child == INT_MAX) return root->val;
+        return fabs(target - child) < fabs(target - root->val) ? child : root->val;
     }
 };
 
+// Time Complexity: O(n)
+// Space Complexity: O(h)
 class Solution {
 public:
     int closestValue(TreeNode* root, double target) {

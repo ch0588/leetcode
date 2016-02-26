@@ -16,21 +16,26 @@ Show Company Tags
 Show Tags
 Show Similar Problems
  */
+
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)
 class Solution {
 public:
     int maxSubArrayLen(vector<int>& nums, int k) {
         int n = nums.size();
         int res = 0;
-        unordered_map<int,int>hash;
+        unordered_map<int, int> hash;
         int cur_sum = 0;
-        for(int i=0; i<n; ++i){
-            cur_sum+=nums[i];
-            if(cur_sum==k) res = i+1;
+        for (int i = 0; i < n; ++i) {
+            cur_sum += nums[i];
+            if (cur_sum == k) res = i + 1;
             
-            if(hash.find(cur_sum-k)!=hash.end()){
-                res = max(res,i-hash[cur_sum-k]);
+            if (hash.find(cur_sum - k) != hash.end()) {
+                res = max(res, i - hash[cur_sum - k]);
             }
-            if(hash.find(cur_sum)==hash.end()){ //maintain hash value is the first pos
+            if (hash.find(cur_sum) ==
+                hash.end()) {  // maintain hash value is the first pos
                 hash[cur_sum] = i;
             }
         }

@@ -1,3 +1,4 @@
+/*
 The API: int read4(char *buf) reads 4 characters at a time from a file.
 
 The return value is the actual number of characters read. For example, it returns 3 if there is only 3 characters left in the file.
@@ -6,10 +7,14 @@ By using the read4 API, implement the function int read(char *buf, int n) that r
 
 Note:
 The read function may be called multiple times.
+*/
+
+// Time:  O(n)
+// Space: O(1)
 
 // Forward declaration of the read4 API.
 int read4(char *buf);
- 
+
 class Solution {
 public:
     /**
@@ -17,28 +22,21 @@ public:
      * @param n   Maximum number of characters to read
      * @return    The number of characters read
      */
-    queue<char> tank;
     int read(char *buf, int n) {
-        int w = 0, wBuf;
-        char *pBuf = buf;
-        while (w < n && !tank.empty()) {
-            *pBuf = tank.front();
-            tank.pop();
-            w++;
-            pBuf++;
-        }
-        while (w < n && (wBuf = read4(pBuf)) ) {
-            w += wBuf;
-            pBuf += wBuf;
-        }
-        if (w >= n) {
-            for (int i = 0; i < w-n; i++) {
-                tank.push(pBuf[n-w+i]);
+        int i = 0;
+        while (i < n) {
+            if (i4_ < n4_) {  // Any characters in buf4.
+                buf[i++] = buf4_[i4_++];
+            } else if (n4_ = read4(buf4_)) {  // Read more characters.
+                i4_ = 0;
+            } else {  // Buffer has been empty.
+                break;
             }
-            pBuf[n-w] = '\0';
-            w = n;
         }
-        buf += w;
-        return w;
+        return i;
     }
+    
+private:
+    char buf4_[4];
+    int i4_ = 0, n4_ = 0;
 };

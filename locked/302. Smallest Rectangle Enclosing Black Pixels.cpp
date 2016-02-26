@@ -14,6 +14,10 @@ Return 6.
 Show Company Tags
 Show Tags
  */
+
+// Time Complexity: O(m log n + n log m)
+// Space Complexity: O(1)
+
 class Solution {
 public:
     vector<vector<char>> *image;
@@ -49,7 +53,6 @@ public:
         return i;
     }
 };
-
 
 /*
 https://leetcode.com/discuss/68246/c-java-python-binary-search-solution-with-explanation

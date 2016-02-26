@@ -36,34 +36,27 @@ output:
  */
 class Solution {
 public:
-    vector<vector<int>>res;
-    void dfs(vector<int>cur,int lim,int remain){
-        /*
-        for(int i=0; i<cur.size(); ++i){
-            printf("%d ",cur[i]);
-        }
-        printf("%d\n",remain);
-        */
+    vector<vector<int>> res;
+    void dfs(vector<int> cur, int lim, int remain) {
         cur.push_back(remain);
         res.push_back(cur);
         cur.pop_back();
         
-        for(int i=lim; i<=sqrt(remain); ++i){
-            if(remain%i==0){
+        for (int i = lim; i <= sqrt(remain); ++i) {
+            if (remain % i == 0) {
                 cur.push_back(i);
-                dfs(cur,i,remain/i);
+                dfs(cur, i, remain / i);
                 cur.pop_back();
             }
         }
-        
     }
     vector<vector<int>> getFactors(int n) {
         res.clear();
-        for(int i=2; i<=sqrt(n); ++i){
-            if(n%i==0){
-                vector<int>cur;
+        for (int i = 2; i <= sqrt(n); ++i) {
+            if (n % i == 0) {
+                vector<int> cur;
                 cur.push_back(i);
-                dfs(cur,i,n/i);
+                dfs(cur, i, n / i);
             }
         }
         return res;

@@ -22,44 +22,46 @@ Show Similar Problems
 */
 
 
+// Time Complexity: O(n*m)
+// Space Complexity: O(n*m)
 
 class Solution {
 private:
-    struct NODE{
-        int x,y,t;
-        NODE(){}
-        NODE(int _x,int _y,int _t):x(_x),y(_y),t(_t){}
+    struct NODE {
+        int x, y, t;
+        NODE() {}
+        NODE(int _x, int _y, int _t) : x(_x), y(_y), t(_t) {}
     };
+    
 public:
-        
     void wallsAndGates(vector<vector<int>>& rooms) {
         int INF = 2147483647;
         int n = rooms.size();
-        if(n==0) return;
+        if (n == 0) return;
         int m = rooms[0].size();
         
-        int go[4][2] = { {1,0},{-1,0},{0,1},{0,-1} };
+        int go[4][2] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
         int vis[n][m];
         NODE now;
-        queue<NODE>Q;
-        for(int i=0; i<n; ++i)
-            for(int j=0; j<m; ++j){
+        queue<NODE> Q;
+        for (int i = 0; i < n; ++i)
+            for (int j = 0; j < m; ++j) {
                 vis[i][j] = 0;
-                if(rooms[i][j]==0){
-                    Q.push( NODE(i,j,0) );
+                if (rooms[i][j] == 0) {
+                    Q.push(NODE(i, j, 0));
                     vis[i][j] = 1;
                 }
             }
-        while(!Q.empty()){
+        while (!Q.empty()) {
             now = Q.front();
             rooms[now.x][now.y] = now.t;
             Q.pop();
-            for(int k=0; k<4; ++k){
+            for (int k = 0; k < 4; ++k) {
                 int x = now.x + go[k][0];
                 int y = now.y + go[k][1];
-                if(x<0||x>=n || y<0||y>=m) continue;
-                if(rooms[x][y]==-1 || vis[x][y]==1) continue;
-                Q.push( NODE(x,y,now.t+1) );
+                if (x < 0 || x >= n || y < 0 || y >= m) continue;
+                if (rooms[x][y] == -1 || vis[x][y] == 1) continue;
+                Q.push(NODE(x, y, now.t + 1));
                 vis[x][y] = 1;
             }
         }

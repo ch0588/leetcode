@@ -10,35 +10,35 @@ Follow up:
 Could you solve it in O(nk) runtime?
  */
 
+// Time Complexity: O(n*k)
+// Space Complexity: O(k)
+
 class Solution {
 public:
     int minCostII(vector<vector<int>>& costs) {
         int n = costs.size();
-        if(n==0) return 0;
+        if (n == 0) return 0;
         int k = costs[0].size();
-        int min1,min2;
+        int min1, min2;
         int dp[k];
-        for(int i=0; i<n; ++i){
-            int old_min1 = i==0?0:min1;
-            int old_min2 = i==0?0:min2;
+        for (int i = 0; i < n; ++i) {
+            int old_min1 = i == 0 ? 0 : min1;
+            int old_min2 = i == 0 ? 0 : min2;
             min1 = min2 = INT_MAX;
-            for(int j=0; j<k; ++j){
-                if(dp[j]!=old_min1 || old_min1==old_min2){
-                    dp[j] = old_min1+costs[i][j];
+            for (int j = 0; j < k; ++j) {
+                if (dp[j] != old_min1 || old_min1 == old_min2) {
+                    dp[j] = old_min1 + costs[i][j];
+                } else {
+                    dp[j] = old_min2 + costs[i][j];
                 }
-                else{
-                    dp[j] = old_min2+costs[i][j];
-                }
-                if(dp[j]>min1){
-                    min2 = min(min2,dp[j]);
-                }
-                else{
+                
+                if (dp[j] > min1) {
+                    min2 = min(min2, dp[j]);
+                } else {
                     min2 = min1;
                     min1 = dp[j];
                 }
-                //printf("%d %d %d\n",i,j,dp[j]);
             }
-            //printf("%d %d\n",min1,min2);
         }
         return min1;
     }

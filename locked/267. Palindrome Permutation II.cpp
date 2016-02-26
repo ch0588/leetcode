@@ -20,18 +20,18 @@ public:
         if (s.empty()) {
             return {};
         }
-
+        
         unordered_map<char, int> cnt;
-        for (const auto& c : s) {
+        for (const auto &c : s) {
             ++cnt[c];
         }
-
+        
         string mid, chars;
-        for (const auto& kvp : cnt) {
+        for (const auto &kvp : cnt) {
             if (kvp.second % 2) {
                 if (mid.empty()) {
                     mid.push_back(kvp.first);
-                } else {  // The count of the middle char is at most one. 
+                } else {  // The count of the middle char is at most one.
                     return {};
                 }
             }
@@ -40,7 +40,7 @@ public:
         return permuteUnique(mid, chars);
     }
     
-    vector<string> permuteUnique(const string& mid, string& chars) {
+    vector<string> permuteUnique(const string &mid, string &chars) {
         vector<string> result;
         sort(chars.begin(), chars.end());
         do {
@@ -49,9 +49,7 @@ public:
         } while (next_permutation(chars.begin(), chars.end()));
         return result;
     }
-
 };
-
 
 class Solution {
 public:

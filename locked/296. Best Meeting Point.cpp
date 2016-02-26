@@ -17,25 +17,28 @@ Show Tags
 Show Similar Problems
 
  */
+
+// Time Complexity: O(n*m)
+// Space Complexity: O(n*m)
 class Solution {
 public:
     int minTotalDistance(vector<vector<int>>& grid) {
         int n = grid.size();
-        if(n==0) return 0;
+        if (n == 0) return 0;
         int m = grid[0].size();
         
-        int C[n*m];
+        int C[n * m];
         int res = 0;
-        for(int dim=0; dim<2; ++dim){
+        for (int dim = 0; dim < 2; ++dim) {
             int k = 0;
-            for(int i=0; i<n; ++i)
-                for(int j=0; j<m; ++j)
-                    if(grid[i][j]==1){
-                        C[k++] = dim?j:i;
+            for (int i = 0; i < n; ++i)
+                for (int j = 0; j < m; ++j)
+                    if (grid[i][j] == 1) {
+                        C[k++] = dim ? j : i;
                     }
-            nth_element(C, C+k/2, C+k);
-            int median = C[k/2];
-            for(int i=0; i<k; ++i) res += (abs(median-C[i]));
+            nth_element(C, C + k / 2, C + k);
+            int median = C[k / 2];
+            for (int i = 0; i < k; ++i) res += (abs(median - C[i]));
         }
         return res;
     }

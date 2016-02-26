@@ -10,22 +10,26 @@ Return 2. Because there are two triplets which sums are less than 2:
 Follow up:
 Could you solve it in O(n2) runtime?
  */
+
+
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
+
 class Solution {
 public:
     int threeSumSmaller(vector<int>& nums, int target) {
         int cnt = 0;
         int n = nums.size();
         
-        sort(nums.begin(),nums.end());
-        for(int i=0; i<n-2; ++i){
-            int l = i+1, r = n-1;
-            while(l<r){
-                if(nums[l]+nums[r]+nums[i]<target){
-                    //printf("%d %d %d\n",i,l,r);
-                    cnt = cnt + (r-l);
+        sort(nums.begin(), nums.end());
+        
+        for (int i = 0; i < n - 2; ++i) {
+            int l = i + 1, r = n - 1;
+            while (l < r) {
+                if (nums[l] + nums[r] + nums[i] < target) {
+                    cnt = cnt + (r - l);
                     l++;
-                }
-                else{
+                } else {
                     r--;
                 }
             }

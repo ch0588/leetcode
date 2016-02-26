@@ -12,21 +12,25 @@ Show Tags
 Show Similar Problems
 
  */
+
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
 class Solution {
 public:
-    
     bool canPermutePalindrome(string s) {
-        unordered_map<char,int>hash;
-        for(char ch:s){
+        unordered_map<char, int> hash;
+        for (char ch : s) {
             hash[ch]++;
         }
         int odd = 0;
-        for(auto h:hash){
-            if(h.second&1) odd++;
+        for (auto h : hash) {
+            if (h.second & 1) odd++;
         }
-        if((int)s.size() % 2){
-            return odd==1;
+        if ((int)s.size() % 2) {
+            return odd == 1;
         }
-        return odd==0;
+        return odd == 0;
     }
 };

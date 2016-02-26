@@ -6,6 +6,10 @@ Given [[0, 30],[5, 10],[15, 20]],
 return false.
 */
 
+
+// Time Complexity: O(nlogn)
+// Space Complexity: O(1)
+
 /**
  * Definition for an interval.
  * struct Interval {
@@ -15,20 +19,22 @@ return false.
  *     Interval(int s, int e) : start(s), end(e) {}
  * };
  */
+
 class Solution {
 public:
-    static bool cmp(Interval a,Interval b){
-        if(a.start==b.start) return a.end<b.end;
-        return a.start<b.start;
+    static bool cmp(Interval a, Interval b) {
+        if (a.start == b.start) return a.end < b.end;
+        return a.start < b.start;
     }
     bool canAttendMeetings(vector<Interval>& intervals) {
-        sort(intervals.begin(),intervals.end(),cmp);
         int n = intervals.size();
-        if(n==0) return true;
+        if (n == 0) return true;
+        
+        sort(intervals.begin(), intervals.end(), cmp);
         
         int pre_end = intervals[0].start;
-        for(int i=0; i<n; ++i){
-            if(pre_end>intervals[i].start) return false;
+        for (int i = 0; i < n; ++i) {
+            if (pre_end > intervals[i].start) return false;
             pre_end = intervals[i].end;
         }
         return true;

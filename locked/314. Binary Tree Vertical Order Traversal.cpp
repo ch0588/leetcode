@@ -32,6 +32,10 @@ return its vertical order traversal as:
   [7]
 ]
  */
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -41,32 +45,30 @@ return its vertical order traversal as:
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-
 class Solution {
 public:
-    unordered_map<int,vector<int>>hash;
-    vector<vector<int>> verticalOrder(TreeNode* root) {
-        vector<vector<int>>res;
-        if(!root){
-            return res;
+    unordered_map<int, vector<int>> hash;
+    vector<vector<int>> verticalOrder(TreeNode *root) {
+        if (!root) {
+            return {};
         }
+        vector<vector<int>> res;
         int left = 0, right = 0;
         vector<pair<TreeNode *, int>> Q{{root, 0}};
+        
         for (int i = 0; i < Q.size(); ++i) {
             TreeNode *node = Q[i].first;
             int level = Q[i].second;
             
             hash[level].emplace_back(node->val);
-            left = min(left,level);
-            right = max(right,level);
-            if(node->left)
-                Q.push_back({node->left, level - 1});
-            if(node->right)
-                Q.push_back({node->right, level + 1});
+            left = min(left, level);
+            right = max(right, level);
+            if (node->left) Q.push_back({node->left, level - 1});
+            if (node->right) Q.push_back({node->right, level + 1});
         }
-        res.resize(right-left+1);
-        for(auto it:hash){
-            res[ it.first - left ] = it.second;
+        res.resize(right - left + 1);
+        for (auto it : hash) {
+            res[it.first - left] = it.second;
         }
         return res;
     }

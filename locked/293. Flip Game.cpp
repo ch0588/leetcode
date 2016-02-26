@@ -13,15 +13,18 @@ For example, given s = "++++", after one move, it may become one of the followin
 If there is no valid move, return an empty list [].
  */
 
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
 class Solution {
 public:
     vector<string> generatePossibleNextMoves(string s) {
-        vector<string>res;
+        vector<string> res;
         int len = s.size();
-        for(int i=0; i<len-1; ++i){
-            if(s[i]==s[i+1] && s[i]=='+'){
+        for (int i = 0; i < len - 1; ++i) {
+            if (s[i] == s[i + 1] && s[i] == '+') {
                 string t = s;
-                t[i] = t[i+1] = '-';
+                t[i] = t[i + 1] = '-';
                 res.push_back(t);
             }
         }

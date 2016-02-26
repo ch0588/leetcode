@@ -35,39 +35,44 @@ Challenge:
 
 Can you do it in time complexity O(k log mn), where k is the length of the positions?
  */
+
+
+// Time Complexity: O(n*m+p) p:positions.length
+// Space Complexity: O(n*m)
+
 class Solution {
 public:
-    int *fa;
-    int find(int x){
-        if(x==fa[x]) return x;
+    int* fa;
+    int find(int x) {
+        if (x == fa[x]) return x;
         return fa[x] = find(fa[x]);
     }
     vector<int> numIslands2(int m, int n, vector<pair<int, int>>& positions) {
-        fa = new int[m*n];
-        vector<int>res;
+        fa = new int[m * n];
+        vector<int> res;
         int num = 0;
         
         bool vis[m][n];
-        for(int i=0; i<m; ++i)
-            for(int j=0; j<n; ++j){
-                fa[ n*i+j ] = n*i+j;
+        for (int i = 0; i < m; ++i)
+            for (int j = 0; j < n; ++j) {
+                fa[n * i + j] = n * i + j;
                 vis[i][j] = false;
             }
         
-        int go[4][2] = { {1,0},{-1,0},{0,1},{0,-1} };
-        for( auto pos:positions ){
+        int go[4][2] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        for (auto pos : positions) {
             int x = pos.first, y = pos.second;
-            if(vis[x][y]) continue;
+            if (vis[x][y]) continue;
             vis[x][y] = true;
             num++;
-            for(int k=0; k<4; ++k){
-                int nx = x+go[k][0];
-                int ny = y+go[k][1];
-                if(nx<0||nx>=m || ny<0||ny>=n) continue;
-                int id = n*x+y;
-                if(vis[nx][ny]){
-                    int nf = find( n*nx+ny );
-                    if(nf!=id){
+            for (int k = 0; k < 4; ++k) {
+                int nx = x + go[k][0];
+                int ny = y + go[k][1];
+                if (nx < 0 || nx >= m || ny < 0 || ny >= n) continue;
+                int id = n * x + y;
+                if (vis[nx][ny]) {
+                    int nf = find(n * nx + ny);
+                    if (nf != id) {
                         num--;
                         fa[nf] = id;
                     }
