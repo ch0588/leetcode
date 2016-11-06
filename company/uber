@@ -1,24 +1,45 @@
-4	Median of Two Sorted Arrays	18.0%	Hard
-8	String to Integer (atoi)	13.2%	Easy
-13	Roman to Integer	37.6%	Easy
-17	Letter Combinations of a Phone Number	27.5%	Medium
-23	Merge k Sorted Lists	22.5%	Hard
-33	Search in Rotated Sorted Array	29.7%	Hard
-36	Valid Sudoku	29.4%	Easy
-49	Group Anagrams	26.2%	Medium
-78	Subsets	30.2%	Medium
-102	Binary Tree Level Order Traversal	31.4%	Easy
-104	Maximum Depth of Binary Tree	46.9%	Easy
-121	Best Time to Buy and Sell Stock	35.0%	Medium
-125	Valid Palindrome	23.1%	Easy
-138	Copy List with Random Pointer	25.9%	Hard
-140	Word Break II	19.0%	Hard
-146	LRU Cache	15.7%	Hard
-155	Min Stack	21.3%	Easy
-161	One Edit Distance 	27.3%	Medium
-171	Excel Sheet Column Number	40.0%	Easy
-202	Happy Number	35.3%	Easy
-206	Reverse Linked List	37.5%	Easy
-208	Implement Trie (Prefix Tree)	25.1%	Medium
-249	Group Shifted Strings 	30.4%	Easy
-266	Palindrome Permutation 	49.6%	Easy
+	1	Two Sum	28.3%	Easy	
+8	String to Integer (atoi)	13.8%	Easy	
+10	Regular Expression Matching	23.2%	Hard	
+13	Roman to Integer	42.7%	Easy	
+17	Letter Combinations of a Phone Number	31.6%	Medium	
+22	Generate Parentheses	40.8%	Medium	
+23	Merge k Sorted Lists	25.4%	Hard	
+24	Swap Nodes in Pairs	36.8%	Easy	
+33	Search in Rotated Sorted Array 	31.6%	Hard	
+36	Valid Sudoku	33.2%	Easy	
+37	Sudoku Solver	27.4%	Hard	
+39	Combination Sum	34.7%	Medium	
+49	Group Anagrams	30.9%	Medium	
+54	Spiral Matrix	24.2%	Medium	
+76	Minimum Window Substring	23.1%	Hard	
+78	Subsets	35.5%	Medium	
+91	Decode Ways	18.5%	Medium	
+104	Maximum Depth of Binary Tree	50.2%	Easy	
+121	Best Time to Buy and Sell Stock	38.4%	Easy	
+125	Valid Palindrome	25.0%	Easy	
+133	Clone Graph	24.9%	Medium	
+138	Copy List with Random Pointer	26.3%	Hard	
+139	Word Break	27.5%	Medium	
+140	Word Break II	21.6%	Hard	
+146	LRU Cache 	15.9%	Hard	
+155	Min Stack	25.4%	Easy	
+161	One Edit Distance 	30.0%	Medium	
+171	Excel Sheet Column Number	44.6%	Easy	
+186	Reverse Words in a String II 	28.7%	Medium	
+202	Happy Number	38.7%	Easy	
+206	Reverse Linked List	42.7%	Easy	
+208	Implement Trie (Prefix Tree)	25.6%	Medium	
+230	Kth Smallest Element in a BST	41.2%	Medium	
+242	Valid Anagram	44.2%	Easy	
+249	Group Shifted Strings 	36.9%	Easy	
+254	Factor Combinations 	39.2%	Medium	
+262	Trips and Users	15.7%	Hard	
+266	Palindrome Permutation 	54.0%	Easy	
+290	Word Pattern	31.5%	Easy	
+291	Word Pattern II 	37.0%	Hard	
+297	Serialize and Deserialize Binary Tree 	30.7%	Hard	
+337	House Robber III	40.8%	Medium	
+373	Find K Pairs with Smallest Sums	28.9%	Medium	
+380	Insert Delete GetRandom O(1) 	36.7%	Hard	
+432	All O`one Data Structure	26.5%	Hard

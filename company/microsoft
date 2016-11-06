@@ -1,52 +1,82 @@
-5	Longest Palindromic Substring	22.2%	Medium
-8	String to Integer (atoi)	13.2%	Easy
-21	Merge Two Sorted Lists	34.3%	Easy
-23	Merge k Sorted Lists	22.5%	Hard
-24	Swap Nodes in Pairs	34.2%	Medium
-25	Reverse Nodes in k-Group	26.7%	Hard
-28	Implement strStr()	24.0%	Easy
-46	Permutations	34.3%	Medium
-47	Permutations II	27.1%	Medium
-48	Rotate Image	33.7%	Medium
-54	Spiral Matrix	21.9%	Medium
-55	Jump Game	27.7%	Medium
-56	Merge Intervals	24.3%	Hard
-71	Simplify Path	21.2%	Medium
-73	Set Matrix Zeroes	32.7%	Medium
-79	Word Search	22.1%	Medium
-91	Decode Ways	17.0%	Medium
-94	Binary Tree Inorder Traversal	38.4%	Medium
-98	Validate Binary Search Tree	20.6%	Medium
-101	Symmetric Tree	33.1%	Easy
-102	Binary Tree Level Order Traversal	31.4%	Easy
-103	Binary Tree Zigzag Level Order Traversal	27.8%	Medium
-106	Construct Binary Tree from Inorder and Postorder Traversal	28.2%	Medium
-112	Path Sum	30.7%	Easy
-114	Flatten Binary Tree to Linked List	30.2%	Medium
-117	Populating Next Right Pointers in Each Node II	32.5%	Hard
-121	Best Time to Buy and Sell Stock	35.0%	Medium
-124	Binary Tree Maximum Path Sum	22.7%	Hard
-125	Valid Palindrome	23.1%	Easy
-138	Copy List with Random Pointer	25.9%	Hard
-146	LRU Cache	15.7%	Hard
-153	Find Minimum in Rotated Sorted Array	35.2%	Medium
-160	Intersection of Two Linked Lists	29.9%	Easy
-162	Find Peak Element	32.7%	Medium
-165	Compare Version Numbers	16.7%	Easy
-168	Excel Sheet Column Title	20.5%	Easy
-173	Binary Search Tree Iterator	32.8%	Medium
-186	Reverse Words in a String II 	30.1%	Medium
-189	Rotate Array	20.2%	Easy
-200	Number of Islands	26.2%	Medium
-208	Implement Trie (Prefix Tree)	25.1%	Medium
-212	Word Search II	17.9%	Hard
-213	House Robber II	29.4%	Medium
-215	Kth Largest Element in an Array	31.3%	Medium
-218	The Skyline Problem	20.8%	Hard
-232	Implement Queue using Stacks	34.0%	Easy
-236	Lowest Common Ancestor of a Binary Tree	28.3%	Medium
-258	Add Digits	47.9%	Easy
-270	Closest Binary Search Tree Value 	32.6%	Easy
-285	Inorder Successor in BST 	34.8%	Medium
-297	Serialize and Deserialize Binary Tree	25.9%	Medium
-300	Longest Increasing Subsequence	33.0%	Medium
+1	Two Sum	28.3%	Easy	
+2	Add Two Numbers	25.7%	Medium	
+4	Median of Two Sorted Arrays	20.4%	Hard	
+5	Longest Palindromic Substring	24.0%	Medium	
+8	String to Integer (atoi)	13.8%	Easy	
+13	Roman to Integer	42.7%	Easy	
+15	3Sum	20.4%	Medium	
+20	Valid Parentheses	31.5%	Easy	
+21	Merge Two Sorted Lists	37.4%	Easy	
+23	Merge k Sorted Lists	25.4%	Hard	
+24	Swap Nodes in Pairs	36.8%	Easy	
+25	Reverse Nodes in k-Group	29.3%	Hard	
+26	Remove Duplicates from Sorted Array	35.0%	Easy	
+28	Implement strStr()	26.5%	Easy	
+33	Search in Rotated Sorted Array 	31.6%	Hard	
+46	Permutations	39.4%	Medium	
+47	Permutations II	30.3%	Medium	
+48	Rotate Image	36.6%	Medium	
+53	Maximum Subarray	38.3%	Medium	
+54	Spiral Matrix	24.2%	Medium	
+55	Jump Game 	29.1%	Medium	
+56	Merge Intervals	27.7%	Hard	
+71	Simplify Path	23.6%	Medium	
+73	Set Matrix Zeroes	34.8%	Medium	
+75	Sort Colors 	36.3%	Medium	
+79	Word Search	24.8%	Medium	
+88	Merge Sorted Array	31.1%	Easy	
+91	Decode Ways	18.5%	Medium	
+94	Binary Tree Inorder Traversal	42.9%	Medium	
+98	Validate Binary Search Tree 	22.0%	Medium	
+101	Symmetric Tree	36.3%	Easy	
+102	Binary Tree Level Order Traversal	36.0%	Easy	
+103	Binary Tree Zigzag Level Order Traversal	31.4%	Medium	
+106	Construct Binary Tree from Inorder and Postorder Traversal	30.6%	Medium	
+112	Path Sum	32.5%	Easy	
+114	Flatten Binary Tree to Linked List	33.1%	Medium	
+116	Populating Next Right Pointers in Each Node	36.7%	Medium	
+117	Populating Next Right Pointers in Each Node II	33.3%	Hard	
+121	Best Time to Buy and Sell Stock	38.4%	Easy	
+124	Binary Tree Maximum Path Sum	24.7%	Hard	
+125	Valid Palindrome	25.0%	Easy	
+138	Copy List with Random Pointer	26.3%	Hard	
+141	Linked List Cycle	36.0%	Easy	
+146	LRU Cache 	15.9%	Hard	
+151	Reverse Words in a String	15.7%	Medium	
+153	Find Minimum in Rotated Sorted Array	38.2%	Medium	
+160	Intersection of Two Linked Lists	30.2%	Easy	
+162	Find Peak Element 	35.2%	Medium	
+165	Compare Version Numbers	18.9%	Easy	
+168	Excel Sheet Column Title	23.9%	Easy	
+171	Excel Sheet Column Number	44.6%	Easy	
+173	Binary Search Tree Iterator 	38.0%	Medium	
+174	Dungeon Game	22.5%	Hard	
+186	Reverse Words in a String II 	28.7%	Medium	
+189	Rotate Array	23.0%	Easy	
+191	Number of 1 Bits	38.2%	Easy	
+200	Number of Islands	31.3%	Medium	
+204	Count Primes	25.8%	Easy	
+206	Reverse Linked List	42.7%	Easy	
+208	Implement Trie (Prefix Tree)	25.6%	Medium	
+212	Word Search II 	21.7%	Hard	
+213	House Robber II	32.6%	Medium	
+215	Kth Largest Element in an Array	36.6%	Medium	
+218	The Skyline Problem	24.8%	Hard	
+232	Implement Queue using Stacks	34.8%	Easy	
+235	Lowest Common Ancestor of a Binary Search Tree	37.9%	Easy	
+236	Lowest Common Ancestor of a Binary Tree 	29.2%	Medium	
+237	Delete Node in a Linked List	45.0%	Easy	
+238	Product of Array Except Self	46.1%	Medium	
+258	Add Digits	49.9%	Easy	
+268	Missing Number	42.9%	Medium	
+270	Closest Binary Search Tree Value 	37.1%	Easy	
+273	Integer to English Words	20.6%	Hard	
+285	Inorder Successor in BST 	36.3%	Medium	
+297	Serialize and Deserialize Binary Tree 	30.7%	Hard	
+300	Longest Increasing Subsequence	36.8%	Medium	
+333	Largest BST Subtree 	29.2%	Medium	
+348	Design Tic-Tac-Toe 	44.8%	Medium	
+365	Water and Jug Problem	25.5%	Medium	
+387	First Unique Character in a String	44.5%	Easy	
+419	Battleships in a Board	59.9%	Medium	
+445	Add Two Numbers II	41.5%	Medium
